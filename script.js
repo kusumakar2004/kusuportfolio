@@ -1,38 +1,38 @@
 /* =============================================
-   VELAMALA RAHUL PORTFOLIO — UPGRADED SCRIPT
+   KUSUMAKAR ELLIPILLI PORTFOLIO — UPGRADED SCRIPT
+   Volcano & Fire Theme Edition
    ============================================= */
 
-/* ======== SPLASH SCREEN ======== */
+/* ======== SPLASH SCREEN WITH ENTER BUTTON ======== */
 (function () {
   const splash = document.getElementById('splashScreen');
-  const bar = document.getElementById('splashBar');
-  const pct = document.getElementById('splashPct');
-  let progress = 0;
-  const interval = setInterval(() => {
-    progress += Math.random() * 14 + 4;
-    if (progress >= 100) {
-      progress = 100;
-      clearInterval(interval);
+  const enterBtn = document.getElementById('enterBtn');
+  
+  // Initialize cursor trail immediately for splash screen
+  initCursorTrail();
+  
+  if (enterBtn) {
+    enterBtn.addEventListener('click', function() {
+      splash.classList.add('hidden');
+      document.body.style.overflow = '';
       setTimeout(() => {
-        splash.classList.add('hidden');
-        document.body.style.overflow = '';
         initAll();
-      }, 350);
-    }
-    bar.style.width = progress + '%';
-    pct.textContent = Math.floor(progress) + '%';
-  }, 80);
+      }, 100);
+    });
+  }
+  
   document.body.style.overflow = 'hidden';
 })();
 
 function initAll() {
   initStars();
-  initCursorTrail();
+  initSpaceUniverse();
   initTyped();
   initNavbar();
   initScrollReveal();
   initSkillBars();
   initHamburger();
+  initThemeToggle();
 }
 
 /* ======== STAR CANVAS (REDUCED DENSITY) ======== */
@@ -77,8 +77,8 @@ function initStars() {
       ctx.beginPath();
       ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
       ctx.fillStyle = s.isBlue
-        ? `rgba(56,189,248,${a})`
-        : `rgba(200,220,255,${a})`;
+        ? `rgba(255,183,0,${a})`
+        : `rgba(255,107,157,${a})`;
       ctx.fill();
 
       s.y -= s.speed;
@@ -86,6 +86,118 @@ function initStars() {
     });
     requestAnimationFrame(animate);
   }
+  animate();
+}
+
+/* ======== VOLCANO ROCKS FALLING - BACKGROUND ANIMATION ======== */
+function initSpaceUniverse() {
+  const universeContainer = document.createElement('div');
+  universeContainer.id = 'spaceUniverse';
+  universeContainer.style.cssText = `
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    overflow: hidden;
+  `;
+  document.body.appendChild(universeContainer);
+
+  class VolcanoRock {
+    constructor() {
+      this.x = Math.random() * window.innerWidth;
+      this.y = -50;
+      this.speedX = (Math.random() - 0.5) * 0.8; // Slight horizontal drift
+      this.speedY = Math.random() * 1.5 + 2.5; // Falling speed
+      this.opacity = Math.random() * 0.4 + 0.3;
+      this.scale = Math.random() * 0.8 + 0.6;
+      this.rotation = Math.random() * 360;
+      this.rotationSpeed = Math.random() * 4 - 2;
+      this.element = this.create();
+      this.fireTrail = [];
+      this.fireCounter = 0;
+    }
+
+    create() {
+      const el = document.createElement('div');
+      el.innerHTML = '🪨';
+      el.style.cssText = `
+        position: absolute;
+        left: ${this.x}px;
+        top: ${this.y}px;
+        font-size: ${28 * this.scale}px;
+        opacity: ${this.opacity};
+        transform: rotate(${this.rotation}deg);
+        filter: drop-shadow(0 0 ${8 * this.scale}px rgba(255, 107, 53, 0.6));
+        transition: opacity 0.3s;
+        z-index: 1;
+      `;
+      universeContainer.appendChild(el);
+      return el;
+    }
+
+    createFireParticle() {
+      const fire = document.createElement('div');
+      const fireEmojis = ['🔥', '🌪️', '✨'];
+      fire.innerHTML = fireEmojis[Math.floor(Math.random() * fireEmojis.length)];
+      const offsetX = (Math.random() - 0.5) * 30;
+      const offsetY = Math.random() * 20;
+      fire.style.cssText = `
+        position: absolute;
+        left: ${this.x + offsetX}px;
+        top: ${this.y + 30 + offsetY}px;
+        font-size: ${14 * this.scale}px;
+        opacity: ${0.6 + Math.random() * 0.4};
+        pointer-events: none;
+        animation: fireFloat 0.8s ease-out forwards;
+      `;
+      universeContainer.appendChild(fire);
+      return fire;
+    }
+
+    update() {
+      this.x += this.speedX;
+      this.y += this.speedY;
+      this.rotation += this.rotationSpeed;
+      this.fireCounter++;
+      
+      this.element.style.left = this.x + 'px';
+      this.element.style.top = this.y + 'px';
+      this.element.style.transform = `rotate(${this.rotation}deg)`;
+
+      // Create fire trail every 2 frames
+      if (this.fireCounter % 2 === 0) {
+        this.createFireParticle();
+      }
+
+      // Remove when off-screen (below viewport)
+      if (this.y > window.innerHeight + 100) {
+        this.element.remove();
+        return false;
+      }
+      return true;
+    }
+  }
+
+  const rocks = [];
+
+  function spawnRock() {
+    if (rocks.length < 12) {
+      rocks.push(new VolcanoRock());
+    }
+  }
+
+  function animate() {
+    for (let i = rocks.length - 1; i >= 0; i--) {
+      if (!rocks[i].update()) {
+        rocks.splice(i, 1);
+      }
+    }
+    requestAnimationFrame(animate);
+  }
+
+  // Spawn rocks periodically
+  setInterval(spawnRock, 1500);
+  spawnRock();
   animate();
 }
 
@@ -140,14 +252,14 @@ function initCursorTrail() {
 
       ctx.beginPath();
       ctx.arc(trail[i].x, trail[i].y, radius, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(56,189,248,${alpha})`;
+      ctx.fillStyle = `rgba(255,183,0,${alpha})`;
       ctx.fill();
 
       // Teardrop glow on early trail points
       if (i < 8) {
         ctx.beginPath();
         ctx.arc(trail[i].x, trail[i].y, radius * 2.5, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(56,189,248,${alpha * 0.15})`;
+        ctx.fillStyle = `rgba(255,183,0,${alpha * 0.15})`;
         ctx.fill();
       }
     }
@@ -165,8 +277,8 @@ function initCursorTrail() {
         trail[0].x, trail[0].y,
         trail[trail.length - 1].x, trail[trail.length - 1].y
       );
-      grad.addColorStop(0, 'rgba(56,189,248,0.6)');
-      grad.addColorStop(1, 'rgba(56,189,248,0)');
+      grad.addColorStop(0, 'rgba(255,183,0,0.6)');
+      grad.addColorStop(1, 'rgba(255,183,0,0)');
       ctx.strokeStyle = grad;
       ctx.lineWidth = 2;
       ctx.lineCap = 'round';
@@ -181,7 +293,7 @@ function initCursorTrail() {
 /* ======== TYPED TEXT ======== */
 function initTyped() {
   const el = document.getElementById('typed');
-  const texts = ['Data Analyst', 'CSE Engineer', 'Python Developer', 'Dashboard Builder', 'Problem Solver'];
+  const texts = ['Data Analyst', 'CSE Engineer', 'Python Developer', 'Dashboard Builder', 'Problem Solver', 'Code Wizard'];
   let ti = 0, ci = 0, deleting = false;
 
   function type() {
@@ -226,6 +338,34 @@ function initHamburger() {
   const links = document.querySelector('.nav-links');
   ham.addEventListener('click', () => { links.classList.toggle('open'); });
   links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+}
+
+/* ======== THEME TOGGLE ======== */
+function initThemeToggle() {
+  const themeToggle = document.getElementById('themeToggle');
+  const body = document.body;
+  
+  // Load saved theme from localStorage
+  const savedTheme = localStorage.getItem('theme') || 'dark';
+  if (savedTheme === 'light') {
+    body.classList.add('light-mode');
+    themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+  } else {
+    body.classList.remove('light-mode');
+    themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+  }
+  
+  // Toggle theme on button click
+  themeToggle.addEventListener('click', () => {
+    body.classList.toggle('light-mode');
+    const isLight = body.classList.contains('light-mode');
+    localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    themeToggle.innerHTML = isLight ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+    
+    // Smooth transition
+    body.style.transition = 'background-color 0.3s ease, color 0.3s ease';
+    setTimeout(() => { body.style.transition = ''; }, 300);
+  });
 }
 
 /* ======== SCROLL REVEAL ======== */

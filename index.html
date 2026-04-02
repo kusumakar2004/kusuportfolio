@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Velamala Rahul | Portfolio</title>
+  <title>Kusumakar Ellipilli | Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@400;500;600;700&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <link rel="stylesheet" href="style.css"/>
 </head>
@@ -14,13 +14,12 @@
   <!-- Splash Screen -->
   <div class="splash-screen" id="splashScreen">
     <div class="splash-content">
-      <div class="splash-logo">
-        <span class="splash-bracket">&lt;</span>RV<span class="splash-bracket">/&gt;</span>
+      <div class="splash-icon">
+        <i class="fas fa-volcano"></i>
       </div>
-      <div class="splash-name">VELAMALA RAHUL</div>
-      <div class="splash-tagline">Data Analyst &middot; Developer &middot; CSE Engineer</div>
-      <div class="splash-bar-outer"><div class="splash-bar-inner" id="splashBar"></div></div>
-      <div class="splash-pct" id="splashPct">0%</div>
+      <div class="splash-name">KUSUMAKAR ELLIPILLI</div>
+      <div class="splash-tagline">Full Stack Developer & Data Analyst</div>
+      <button class="splash-btn" id="enterBtn">Enter Portfolio</button>
     </div>
   </div>
 
@@ -34,7 +33,7 @@
   <!-- Navbar -->
   <nav class="navbar" id="navbar">
     <div class="nav-logo">
-      <span class="logo-bracket">&lt;</span>RV<span class="logo-bracket">/&gt;</span>
+      <span class="logo-bracket">&lt;</span>KE<span class="logo-bracket">/&gt;</span>
     </div>
     <ul class="nav-links">
       <li><a href="#hero">Home</a></li>
@@ -46,6 +45,9 @@
       <li><a href="#resume">Resume</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
+    <button class="theme-toggle" id="themeToggle" title="Toggle Dark/Light Mode">
+      <i class="fas fa-moon"></i>
+    </button>
     <div class="hamburger" id="hamburger">
       <span></span><span></span><span></span>
     </div>
@@ -54,33 +56,42 @@
   <!-- Hero Section -->
   <section class="hero" id="hero">
     <div class="hero-content">
-      <div class="hero-photo-wrapper">
-        <div class="spider-ring ring1"></div>
-        <div class="spider-ring ring2"></div>
-        <div class="photo-placeholder">
-          <div class="photo-inner">
-            <img src="assets/photo.jpeg" alt="Rahul Velamala" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" />
-            
+      <div class="profile-section">
+        <div class="hexagon">
+          <img src="assets/photo.png" alt="Kusumakar Ellipilli" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" />
+        </div>
+        <div class="profile-stats">
+          <div class="stat-item">
+            <div class="stat-number">2+</div>
+            <div class="stat-label">Projects</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">7+</div>
+            <div class="stat-label">Certificates</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">4+</div>
+            <div class="stat-label">Languages</div>
           </div>
         </div>
       </div>
       <div class="hero-text">
         <p class="hero-greeting">Hello, I'm</p>
-        <h1 class="hero-name">VELAMALA<br><span class="name-accent">RAHUL</span></h1>
+        <h1 class="hero-name">KUSUMAKAR<br><span class="name-accent">ELLIPILLI</span></h1>
         <div class="hero-role">
           <span class="role-tag">&#60;</span>
           <span class="typed-text" id="typed"></span>
           <span class="role-tag">&#47;&#62;</span>
         </div>
-        <p class="hero-bio">Computer Science Engineer | Data Enthusiast | LPU, Punjab</p>
+        <p class="hero-bio">Data Analyst | Developer | Computer Science Engineer</p>
         <div class="hero-btns">
           <a href="#projects" class="btn btn-primary">View Projects</a>
           <a href="#resume" class="btn btn-secondary">Resume</a>
         </div>
         <div class="hero-social">
-          <a href="https://www.linkedin.com/in/rahulvelamala" target="_blank" class="social-link"><i class="fab fa-linkedin"></i> LinkedIn</a>
-          <a href="https://github.com/VelamalaRahul" target="_blank" class="social-link"><i class="fab fa-github"></i> GitHub</a>
-          <a href="mailto:velamalarahual@gmail.com" class="social-link"><i class="fas fa-envelope"></i> Email</a>
+          <a href="https://www.linkedin.com/in/kusumakar-ellipilli" target="_blank" class="social-link"><i class="fab fa-linkedin"></i> LinkedIn</a>
+          <a href="https://github.com/kusumakar2004" target="_blank" class="social-link"><i class="fab fa-github"></i> GitHub</a>
+          <a href="mailto:kusumakarellipilli2@gmail.com" class="social-link"><i class="fas fa-envelope"></i> Email</a>
         </div>
       </div>
     </div>
@@ -99,8 +110,8 @@
     <div class="about-grid">
       <div class="about-card glass-card">
         <h3>Who Am I?</h3>
-        <p>I'm a passionate Computer Science Engineering student at Lovely Professional University, Punjab. I navigate through data, code, and technology with curiosity and dedication.</p>
-        <p>I specialize in Data Analytics, Python programming, and building insightful dashboards that turn raw data into powerful stories.</p>
+        <p>I'm a passionate Computer Science Engineering student at Lovely Professional University, Punjab. I specialize in data analysis, problem-solving, and building insightful dashboards that transform raw data into actionable insights.</p>
+        <p>With expertise in Python, Power BI, and data visualization, I analyze complex datasets to uncover patterns and drive informed decision-making in various domains including water resources, education, and digital engagement.</p>
       </div>
       <div class="about-stats">
         <div class="stat-card">
@@ -136,8 +147,8 @@
         <h3>Languages</h3>
         <div class="skill-tags">
           <span class="tag"><i class="fab fa-python"></i> Python</span>
-          <span class="tag"><i class="fas fa-copyright"></i> C++</span>
           <span class="tag"><i class="fas fa-copyright"></i> C</span>
+          <span class="tag"><i class="fas fa-copyright"></i> C++</span>
           <span class="tag"><i class="fab fa-java"></i> Java</span>
         </div>
       </div>
@@ -174,9 +185,8 @@
           <span class="tag"><i class="fas fa-database"></i> MySQL</span>
           <span class="tag"><i class="fas fa-file-excel"></i> Excel</span>
           <span class="tag"><i class="fas fa-chart-pie"></i> Power BI</span>
-          <span class="tag"><i class="fas fa-book-open"></i> Jupyter</span>
+          <span class="tag"><i class="fas fa-book-open"></i> Jupyter Notebook</span>
           <span class="tag"><i class="fas fa-terminal"></i> VS Code</span>
-          <span class="tag"><i class="fab fa-git-alt"></i> Git</span>
         </div>
       </div>
 
@@ -184,9 +194,8 @@
         <div class="skill-icon"><i class="fas fa-cloud"></i></div>
         <h3>Cloud &amp; Databases</h3>
         <div class="skill-tags">
-          <span class="tag"><i class="fas fa-cloud"></i> Oracle Cloud</span>
-          <span class="tag"><i class="fas fa-server"></i> OCI AI</span>
-          <span class="tag"><i class="fas fa-database"></i> Oracle DB</span>
+          <span class="tag"><i class="fas fa-database"></i> SQL Databases</span>
+          <span class="tag"><i class="fas fa-server"></i> Data Modeling</span>
         </div>
       </div>
 
@@ -242,54 +251,38 @@
       <div class="project-card glass-card">
         <div class="project-number">01</div>
         <div class="project-badge">Python &middot; EDA</div>
-        <h3>Irrigation Census Analysis</h3>
-        <p>Explored irrigation census records to uncover countrywide and zone-specific water usage characteristics using Python-based analytical tools.</p>
+        <h3>Distribution of Dugwells Analysis</h3>
+        <p>Performed end-to-end analysis of dugwell datasets to study water distribution patterns, depth variation, and regional trends across different areas.</p>
         <ul class="project-points">
-          <li>Handled data inconsistencies &amp; restructured fields</li>
-          <li>Visualized water supply methods &amp; farming coverage</li>
-          <li>Actionable insights for agricultural planning</li>
+          <li>Cleaned, transformed, and validated raw data for accurate statistical insights</li>
+          <li>Generated clear visualizations to highlight key trends using Python-based plotting libraries</li>
+          <li>Implemented reproducible analytical workflows with clear documentation</li>
+          <li>Analyzed regional variations to support data-driven conclusions on water availability</li>
         </ul>
         <div class="project-tech">
-          <span>Python</span><span>Pandas</span><span>NumPy</span><span>Matplotlib</span><span>Seaborn</span>
+          <span>Python</span><span>Pandas</span><span>NumPy</span><span>Matplotlib</span><span>Seaborn</span><span>EDA</span>
         </div>
         <div class="project-links">
-          <a href="https://github.com/VelamalaRahul/Irrigation-census-analysis-" target="_blank" class="btn btn-sm"><i class="fab fa-github"></i> GitHub ↗</a>
+          <a href="https://github.com/kusumakar2004/Distribution-of-Dugwell-s-analysis" target="_blank" class="btn btn-sm"><i class="fab fa-github"></i> GitHub ↗</a>
         </div>
       </div>
 
       <div class="project-card glass-card">
         <div class="project-number">02</div>
-        <div class="project-badge">Excel &middot; Dashboard</div>
-        <h3>Worldwide College Performance Demographics</h3>
-        <p>Examined international college datasets to gain insights into academic outcomes, student backgrounds, and institutional facilities.</p>
+        <div class="project-badge">Power BI &middot; Dashboard</div>
+        <h3>Academic Performance vs Digital Engagement Analysis</h3>
+        <p>Analyzed student academic performance and digital engagement data using Power BI to identify relationships between online activity and academic outcomes through interactive dashboards.</p>
         <ul class="project-points">
-          <li>Interactive dashboards for CGPA, placement &amp; salary</li>
-          <li>Pivot tables &amp; conditional formulas for accuracy</li>
-          <li>Patterns for academic planning &amp; resource management</li>
+          <li>Identified patterns between students' digital platform usage and academic results</li>
+          <li>Designed interactive dashboards for easy data exploration and insights</li>
+          <li>Highlighted factors that influence learning performance</li>
+          <li>Implemented DAX formulas and Power Query for robust data transformation</li>
         </ul>
         <div class="project-tech">
-          <span>Excel</span><span>Pivot Tables</span><span>Dashboards</span><span>Analytics</span>
+          <span>Power BI</span><span>Power Query</span><span>DAX</span><span>Data Modeling</span><span>Visualization</span>
         </div>
         <div class="project-links">
-          <a href="https://github.com/VelamalaRahul/Worldwide-College-Performance-Demographics-Excel-project" target="_blank" class="btn btn-sm"><i class="fab fa-github"></i> GitHub ↗</a>
-        </div>
-      </div>
-
-      <div class="project-card glass-card">
-        <div class="project-number">03</div>
-        <div class="project-badge">Html, Css, Js &middot; Chatbot</div>
-        <h3>Ai Cyber Security Chatbot</h3>
-        <p>It acts as a personal security advisor that continuously monitors system activities (like background processes, app permissions, and data leaks) while providing a conversational interface where users can ask for immediate advice on how to handle security breaches.</p>
-        <ul class="project-points">
-          <li>If a user suspects a "phishing attack," the AI analyzes the scenario and gives tailored instructions on how to secure their accounts and report the incident.</li>
-          <li>It features an Emergency Panic Button that can instantly disable the internet and terminate risky processes to prevent data exfiltration.</li>
-          
-        </ul>
-        <div class="project-tech">
-          <span>Html</span><span>Css</span><span>Javascript</span>
-        </div>
-        <div class="project-links">
-          <a href="https://github.com/VelamalaRahul/AI-project-Cybersecurity-Assistant" target="_blank" class="btn btn-sm"><i class="fab fa-github"></i> GitHub ↗</a>
+          <a href="https://github.com/kusumakar2004/Academic-Performance-vs-Digital-Engagement-Analysis-using-Power-BI" target="_blank" class="btn btn-sm"><i class="fab fa-github"></i> GitHub ↗</a>
         </div>
       </div>
 
@@ -311,11 +304,11 @@
           <h3>Data Structures and Algorithms in Java</h3>
           <h4><i class="fas fa-building"></i> CipherSchools</h4>
           <span class="training-date"><i class="fas fa-calendar-alt"></i> July 2025</span>
-          <p>Built a console-based Mood Tracker application using modular OOP architecture and efficient data structures for time-based mood tracking. Focused on creating a user-friendly flow for monitoring mental wellness.</p>
+          <p>Built a console-based Mood Tracker application using modular OOP architecture and efficient data structures for time-based mood tracking. Practiced logical problem-solving and algorithmic thinking through hands-on Java exercises.</p>
           <div class="training-tech">
-            <span>Java</span><span>OOP</span><span>Data Structures</span><span>Modular Programming</span>
+            <span>Java</span><span>OOP</span><span>Data Structures</span><span>Algorithms</span>
           </div>
-          <button class="btn btn-sm view-cert-btn" onclick="openCertModalFile('assets/cipher_school_dsa.pdf','DSA using Java — CipherSchools','CipherSchools · July 2025')">
+          <button class="btn btn-sm" onclick="openCertModalFile('assets/cipher_schools.pdf','Data Structures and Algorithms in Java','CipherSchools · July 2025')" style="margin-top: 1rem;">
             <i class="fas fa-certificate"></i> View Certificate
           </button>
         </div>
@@ -332,35 +325,20 @@
     </div>
     <div class="certs-grid">
 
-      <div class="cert-card glass-card" onclick="openCertModalFile('assets/oracle_ai_foundations.pdf','OCI 2025 AI Foundations Associate','Oracle University · Feb 2026')">
-        <div class="cert-ribbon">Feb 2026</div>
+      <div class="cert-card glass-card" onclick="openCertModalFile('assets/bits_and_bytes_networking.pdf','Bits &amp; Bytes of Computer Networking','Coursera &middot; Sept 2024')">
+        <div class="cert-ribbon">Sept 2024</div>
         <div class="cert-preview-wrap">
-          <iframe src="assets/oracle_ai_foundations.pdf#toolbar=0&navpanes=0&scrollbar=0&page=1" class="cert-iframe-thumb" scrolling="no" tabindex="-1"></iframe>
+          <iframe src="assets/bits_and_bytes_networking.pdf#toolbar=0&navpanes=0&scrollbar=0&page=1" class="cert-iframe-thumb" scrolling="no" tabindex="-1"></iframe>
           <div class="cert-overlay-click"><i class="fas fa-expand"></i> View</div>
         </div>
         <div class="cert-info">
-          <h4><i class="fas fa-cloud"></i> OCI 2025 AI Foundations Associate</h4>
-          <p>Oracle University</p>
-          <span class="cert-date">February 2026</span>
+          <h4><i class="fab fa-google"></i> Bits &amp; Bytes of Networking</h4>
+          <p>Coursera</p>
+          <span class="cert-date">September 2024</span>
         </div>
       </div>
 
-      <div class="cert-card glass-card" onclick="openCertModalFile('assets/oracle_data_platform.pdf','Oracle Data Platform 2025 Foundations','Oracle University · Mar 2026')">
-        <div class="cert-ribbon">Mar 2026</div>
-        <div class="cert-preview-wrap">
-          <iframe src="assets/oracle_data_platform.pdf#toolbar=0&navpanes=0&scrollbar=0&page=1" class="cert-iframe-thumb" scrolling="no" tabindex="-1"></iframe>
-          <div class="cert-overlay-click"><i class="fas fa-expand"></i> View</div>
-        </div>
-        <div class="cert-info">
-          <h4><i class="fas fa-database"></i> Oracle Data Platform 2025 Foundations</h4>
-          <p>Oracle University</p>
-          <span class="cert-date">March 2026</span>
-        </div>
-      </div>
-
-      
-
-      <div class="cert-card glass-card" onclick="openCertModalFile('assets/cse_pathshala_c.pdf','Mastering in C: Basic to Beyond','CSE Pathshala · Mar 2024')">
+      <div class="cert-card glass-card" onclick="openCertModalFile('assets/cse_pathshala_c.pdf','Mastering in C: Basic to Beyond','CSE Pathshala &middot; Mar 2024')">
         <div class="cert-ribbon">Mar 2024</div>
         <div class="cert-preview-wrap">
           <iframe src="assets/cse_pathshala_c.pdf#toolbar=0&navpanes=0&scrollbar=0&page=1" class="cert-iframe-thumb" scrolling="no" tabindex="-1"></iframe>
@@ -373,32 +351,42 @@
         </div>
       </div>
 
-      <div class="cert-card glass-card" onclick="openCertModalFile('assets/bits_and_bytes_networking.pdf','Bits &amp; Bytes of Computer Networking','Google / Coursera · Sep 2024')">
-        <div class="cert-ribbon">Sep 2024</div>
+      <div class="cert-card glass-card" onclick="openCertModalFile('assets/Oracle - AI Foundations Associate.pdf','Oracle - AI Foundations Associate','Oracle &middot; February 2026')">
+        <div class="cert-ribbon">February 2026</div>
         <div class="cert-preview-wrap">
-          <iframe src="assets/bits_and_bytes_networking.pdf#toolbar=0&navpanes=0&scrollbar=0&page=1" class="cert-iframe-thumb" scrolling="no" tabindex="-1"></iframe>
+          <iframe src="assets/Oracle - AI Foundations Associate.pdf#toolbar=0&navpanes=0&scrollbar=0&page=1" class="cert-iframe-thumb" scrolling="no" tabindex="-1"></iframe>
           <div class="cert-overlay-click"><i class="fas fa-expand"></i> View</div>
         </div>
         <div class="cert-info">
-          <h4><i class="fab fa-google"></i> Bits &amp; Bytes of Networking</h4>
-          <p>Google / Coursera</p>
-          <span class="cert-date">September 2024</span>
+          <h4><i class="fas fa-copyright"></i> Oracle - AI Foundations Associate</h4>
+          <p>Oracle</p>
+          <span class="cert-date">February 2026</span>
         </div>
       </div>
 
-      <div class="cert-card glass-card no-pdf" onclick="openCertModalFile('assets/infosys_genai.pdf','No code &amp; Build Apps with No code Tools','Infosys / Spirngboard · Aug 2025')">
-        <div class="cert-ribbon">Aug 2025</div>
+      <div class="cert-card glass-card" onclick="openCertModalFile('assets/intro_hardware_os.pdf','Introduction to Hardware and Operating Systems','Coursera &middot; Oct 2024')">
+        <div class="cert-ribbon">Oct 2024</div>
         <div class="cert-preview-wrap">
-          <div class="cert-placeholder-block">
-            
-            <iframe src="assets/infosys_genai.pdf" class="cert-iframe-thumb" scrolling="no" tabindex="-1"></iframe>
+          <iframe src="assets/intro_hardware_os.pdf#toolbar=0&navpanes=0&scrollbar=0&page=1" class="cert-iframe-thumb" scrolling="no" tabindex="-1"></iframe>
           <div class="cert-overlay-click"><i class="fas fa-expand"></i> View</div>
-          </div>
         </div>
         <div class="cert-info">
-          <h4><i class="fas fa-robot"></i> Generative AI Apps with No-Code Tools</h4>
-          <p>Infosys</p>
-          <span class="cert-date">August 2025</span>
+          <h4><i class="fas fa-server"></i> Intro to Hardware &amp; OS</h4>
+          <p>Coursera</p>
+          <span class="cert-date">October 2024</span>
+        </div>
+      </div>
+
+      <div class="cert-card glass-card" onclick="openCertModalFile('assets/cloud_computing_nptl.pdf','Cloud Computing','NPTL &middot; 2025')">
+        <div class="cert-ribbon">2025</div>
+        <div class="cert-preview-wrap">
+          <iframe src="assets/cloud_computing_nptl.pdf#toolbar=0&navpanes=0&scrollbar=0&page=1" class="cert-iframe-thumb" scrolling="no" tabindex="-1"></iframe>
+          <div class="cert-overlay-click"><i class="fas fa-expand"></i> View</div>
+        </div>
+        <div class="cert-info">
+          <h4><i class="fas fa-cloud"></i> Cloud Computing</h4>
+          <p>NPTL (IIT)</p>
+          <span class="cert-date">2025</span>
         </div>
       </div>
 
@@ -431,12 +419,12 @@
         <button class="btn btn-primary" onclick="toggleResumePreview()">
           <i class="fas fa-eye"></i> <span id="previewBtnText">Preview Resume</span>
         </button>
-        <a href="assets/Rahul_Velamala_CV.pdf" download class="btn btn-secondary"><i class="fas fa-download"></i> Download CV</a>
+        <a href="assets/Kusumakar_Ellipilli_CV.pdf" download class="btn btn-secondary"><i class="fas fa-download"></i> Download CV</a>
       </div>
       <div class="resume-preview-panel" id="resumePreview">
         <div class="resume-frame glass-card">
           <div class="resume-toolbar">
-            <span><i class="fas fa-file-pdf"></i> Rahul_Velamala_General__CV_.pdf</span>
+            <span><i class="fas fa-file-pdf"></i> Kusumakar_Ellipilli_CV.pdf</span>
             <div class="toolbar-btns">
               <button onclick="zoomIn()"><i class="fas fa-search-plus"></i></button>
               <button onclick="zoomOut()"><i class="fas fa-search-minus"></i></button>
@@ -444,7 +432,7 @@
             </div>
           </div>
           <div class="resume-embed-wrapper" id="resumeEmbedWrapper">
-            <iframe src="assets/Rahul_Velamala_CV.pdf#toolbar=0" id="resumeIframe" class="resume-iframe" title="Rahul Velamala Resume"></iframe>
+            <iframe src="assets/Kusumakar_Ellipilli_CV.pdf#toolbar=0" id="resumeIframe" class="resume-iframe" title="Kusumakar Ellipilli Resume"></iframe>
           </div>
         </div>
       </div>
@@ -461,28 +449,28 @@
       <div class="timeline-item">
         <div class="timeline-dot"></div>
         <div class="timeline-card glass-card">
-          <div class="timeline-year">2023 – Present</div>
+          <div class="timeline-year">Aug 2023 – Present</div>
           <h3><i class="fas fa-university"></i> B.Tech — Computer Science &amp; Engineering</h3>
-          <h4>Lovely Professional University, Punjab</h4>
-          <p class="cgpa">CGPA: <span class="accent">6.34</span></p>
+          <h4>Lovely Professional University, Hardaspur, Punjab</h4>
+          <p class="cgpa">Currently Pursuing</p>
         </div>
       </div>
       <div class="timeline-item">
         <div class="timeline-dot"></div>
         <div class="timeline-card glass-card">
-          <div class="timeline-year">2022 – 2023</div>
+          <div class="timeline-year">Apr 2021 – Mar 2023</div>
           <h3><i class="fas fa-school"></i> Intermediate (12th)</h3>
-          <h4>Kalam's Junior College, Vishakhapatnam</h4>
-          <p class="cgpa">Percentage: <span class="accent">63%</span></p>
+          <h4>Sasi Junior College, Visakhapatnam, Andhra Pradesh</h4>
+          <p class="cgpa">Percentage: <span class="accent">90%</span></p>
         </div>
       </div>
       <div class="timeline-item">
         <div class="timeline-dot"></div>
         <div class="timeline-card glass-card">
-          <div class="timeline-year">2020 – 2021</div>
+          <div class="timeline-year">Jun 2020 – Mar 2021</div>
           <h3><i class="fas fa-book"></i> Matriculation (10th)</h3>
-          <h4>KKRS Gowtham School, Vishakhapatnam</h4>
-          <p class="cgpa">Percentage: <span class="accent">63%</span></p>
+          <h4>Delhi Public School, Visakhapatnam, Andhra Pradesh</h4>
+          <p class="cgpa">Percentage: <span class="accent">81%</span></p>
         </div>
       </div>
     </div>
@@ -521,22 +509,22 @@
         <div class="contact-card glass-card">
           <div class="contact-icon"><i class="fas fa-envelope"></i></div>
           <h4>Email</h4>
-          <a href="mailto:velamalarahual@gmail.com">velamalarahual@gmail.com</a>
+          <a href="mailto:kusumakarellipilli2@gmail.com">kusumakarellipilli2@gmail.com</a>
         </div>
         <div class="contact-card glass-card">
           <div class="contact-icon"><i class="fas fa-phone"></i></div>
           <h4>Mobile</h4>
-          <a href="tel:+918917403232">+91-8917403232</a>
+          <a href="tel:+919381642410">+91-9381642410</a>
         </div>
         <div class="contact-card glass-card">
           <div class="contact-icon"><i class="fab fa-linkedin"></i></div>
           <h4>LinkedIn</h4>
-          <a href="https://www.linkedin.com/in/rahulvelamala" target="_blank">linkedin.com/in/rahulvelamala</a>
+          <a href="https://www.linkedin.com/in/kusumakar-ellipilli" target="_blank">linkedin.com/in/kusumakar-ellipilli</a>
         </div>
         <div class="contact-card glass-card">
           <div class="contact-icon"><i class="fab fa-github"></i></div>
           <h4>GitHub</h4>
-          <a href="https://github.com/VelamalaRahul" target="_blank">github.com/VelamalaRahul</a>
+          <a href="https://github.com/kusumakar2004" target="_blank">github.com/kusumakar2004</a>
         </div>
       </div>
 
@@ -570,8 +558,8 @@
 
   <!-- Footer -->
   <footer class="footer">
-    <p>Made with <span class="accent">&#10084;&#65039;</span> by <span class="accent">Velamala Rahul</span></p>
-    <p style="margin-top:0.5rem;font-size:0.8rem;color:#666;">&#169; 2025 All Rights Reserved</p>
+    <p>Made with <span class="accent">&#10084;&#65039;</span> by <span class="accent">Kusumakar Ellipilli</span></p>
+    <p style="margin-top:0.5rem;font-size:0.8rem;color:#666;">&#169; 2026 All Rights Reserved</p>
   </footer>
 
   <script src="script.js"></script>
